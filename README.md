@@ -178,3 +178,10 @@ npm start
 ```
 npm test
 ```
+
+6. Check test coverage with:
+```
+npm run test:coverage
+```
+
+A note on test coverage: Although 100% would be nice, I prefer to focus on functions and classes. Lets skip configuration and boilerplate code for this exercise.
