@@ -10,10 +10,21 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "fixcode": "standard --fix",
+    "lint": "standard",
+    "test": "npm run lint && react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "react-test-renderer": "^16.2.0"
+    "react-test-renderer": "^16.2.0",
+    "standard": "^10.0.3"
+  },
+  "standard": {
+    "globals": [
+      "it",
+      "expect",
+      "URL",
+      "fetch"
+    ]
   }
 }
