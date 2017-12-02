@@ -1,30 +1,36 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+
+// actions
 import * as busesActions from '../actions/buses-actions'
+import { onChangeViewport } from 'redux-map-gl'
 
 // styles
 import './App.css'
 
+// components
+import Map from './Map'
+
 export class App extends Component {
   render () {
     return (
-      <div className='App'>
-        <h1>Maps</h1>
-      </div>
+      <Map { ...this.props } />
     )
   }
 }
 
 function mapStateToProps (state, props) {
   return {
-    buses: state.buses
+    buses: state.buses,
+    map: state.map.viewport.toJS()
   }
 }
 
 function mapDispatchToProps (dispatch) {
   return {
-    actions: bindActionCreators(busesActions, dispatch)
+    actions: bindActionCreators(busesActions, dispatch),
+    onChangeViewport
   }
 }
 

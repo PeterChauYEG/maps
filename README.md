@@ -143,7 +143,7 @@ implement a solution. I will do this by:
   - Linter
   - Jest
   - Redux
-  - Redux-saga
+  - Redux-saga (lets try without this.)
   - react-map-gl
 2. Implement a map
 3. Connect to the API
