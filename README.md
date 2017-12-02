@@ -1,4 +1,4 @@
-# Spare Labs Code Challenge
+# Code Challenge
 The challenge calls for a web app which ingests data from an API, then renders
 the it onto an interactive map.
 
