@@ -15,7 +15,7 @@ import Map from './Map'
 export class App extends Component {
   render () {
     return (
-      <Map { ...this.props } />
+      <Map {...this.props} />
     )
   }
 }
