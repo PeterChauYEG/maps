@@ -46,9 +46,33 @@ export const getBuses = (cb) => {
   fetch(busRequest)
     .then(checkStatus)
     .then(parseJSON)
+    .then(cleanBuses)
     .then(function (data) {
       cb(data)
     }).catch(function (error) {
       console.log('request failed', error)
     })
+}
+
+/**
+ * Cleans up raw bus data.
+ * @param {array} raw bus data from the API.
+ * @return {array} cleaned up data!
+ */
+export const cleanBuses = (raw) => {
+  const clean = raw.map((ele) => {
+    const {
+      VehicleNo,
+      Latitude,
+      Longitude
+    } = ele
+
+    return {
+      vehicleNo: VehicleNo,
+      longitude: Longitude,
+      latitude: Latitude
+    }
+  })
+
+  return clean
 }
