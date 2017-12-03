@@ -6,9 +6,6 @@ import { bindActionCreators } from 'redux'
 import * as busesActions from '../actions/buses-actions'
 import { onChangeViewport } from 'redux-map-gl'
 
-// styles
-import './App.css'
-
 // components
 import Map from './Map'
 
@@ -23,7 +20,7 @@ export class App extends Component {
 function mapStateToProps (state, props) {
   return {
     buses: state.buses,
-    map: state.map.viewport.toJS()
+    map: state.map.viewport.toJS() // ensure that the data can be read
   }
 }
 
@@ -31,7 +28,7 @@ function mapDispatchToProps (dispatch) {
   return {
     actions: bindActionCreators({
       busesActions,
-      onChangeViewport
+      onChangeViewport // attach action creators for map
     }, dispatch)
   }
 }
