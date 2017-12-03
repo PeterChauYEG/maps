@@ -13,9 +13,13 @@ const MAPBOX_ACCESS_TOKEN = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
 
 class Map extends Component {
   componentDidMount () {
+    const {
+      setBuses
+    } = this.props
+
     // get data from API
     const cb = (data) => {
-      console.log({ data })
+      setBuses(data)
     }
 
     helpers.getBuses(cb)
@@ -23,9 +27,7 @@ class Map extends Component {
 
   render () {
     const {
-      actions: {
-        onChangeViewport
-      },
+      onChangeViewport,
       buses,
       map
     } = this.props
@@ -51,7 +53,8 @@ class Map extends Component {
 };
 
 Map.propTypes = {
-  actions: PropTypes.object.isRequired,
+  onChangeViewport: PropTypes.func.isRequired,
+  setBuses: PropTypes.func.isRequired,
   buses: PropTypes.array.isRequired,
   map: PropTypes.object.isRequired
 }

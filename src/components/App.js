@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 
 // actions
 import * as busesActions from '../actions/buses-actions'
@@ -26,10 +25,8 @@ function mapStateToProps (state, props) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    actions: bindActionCreators({
-      busesActions,
-      onChangeViewport // attach action creators for map
-    }, dispatch)
+    setBuses: (buses) => { dispatch(busesActions.setBuses(buses)) },
+    onChangeViewport: (viewport) => { dispatch(onChangeViewport(viewport)) }
   }
 }
 
