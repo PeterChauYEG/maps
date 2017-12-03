@@ -17,7 +17,6 @@ export default (state = [], action) => {
       } = action
 
       return [
-        ...state,
         ...buses
       ]
     default:
