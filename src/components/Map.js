@@ -5,9 +5,6 @@ import PropTypes from 'prop-types'
 // Component
 import DotContainer from './DotContainer'
 
-// fixtures
-import * as fixtures from '../fixtures'
-
 // env var
 const MAPBOX_ACCESS_TOKEN = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
 
@@ -17,21 +14,20 @@ class Map extends Component {
       actions: {
         onChangeViewport
       },
+      buses,
       map
     } = this.props
-
-    const buses = fixtures.populated
 
     return (
       <div className='Map'>
         <MapGL
           {...map}
+          height={window.innerHeight}
+          mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
+          mapStyle='mapbox://styles/mapbox/dark-v9'
+          onChangeViewport={onChangeViewport}
           showZoomControls
           width={window.innerWidth}
-          height={window.innerHeight}
-          mapStyle='mapbox://styles/mapbox/dark-v9'
-          mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
-          onChangeViewport={onChangeViewport}
          >
           <DotContainer
             data={buses}
@@ -44,6 +40,7 @@ class Map extends Component {
 
 Map.propTypes = {
   actions: PropTypes.object.isRequired,
+  buses: PropTypes.array.isRequired,
   map: PropTypes.object.isRequired
 }
 
