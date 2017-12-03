@@ -1,6 +1,7 @@
 {
   "name": "maps_y3",
   "version": "0.1.0",
+  "proxy": "http://api.translink.ca",
   "private": true,
   "dependencies": {
     "autoprefixer": "7.1.6",
@@ -69,7 +70,8 @@
       "it",
       "expect",
       "URL",
-      "fetch"
+      "fetch",
+      "Request"
     ]
   },
   "jest": {

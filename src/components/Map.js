@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import MapGL from 'react-map-gl'
 import PropTypes from 'prop-types'
 
+// Helpers
+import * as helpers from '../helpers'
+
 // Component
 import DotContainer from './DotContainer'
 
@@ -9,6 +12,15 @@ import DotContainer from './DotContainer'
 const MAPBOX_ACCESS_TOKEN = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
 
 class Map extends Component {
+  componentDidMount () {
+    // get data from API
+    const cb = (data) => {
+      console.log({ data })
+    }
+
+    helpers.getBuses(cb)
+  }
+
   render () {
     const {
       actions: {

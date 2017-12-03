@@ -60,7 +60,7 @@ right source for me.
 
 Lets rate limit to 5 mins for now. We can adjust this for better responsiveness later.
 
-An API key is required for every request. I'll set it as environmental variable (API_KEY)
+An API key is required for every request. I'll set it as environmental variable (TRANS_LINK_API_KEY)
 
 The data comes in XML or JSON. I like JSON so lets make sure to request that format.
 This can be done by giving a header of content-type or accept as 'application/JSON'
@@ -68,7 +68,7 @@ This can be done by giving a header of content-type or accept as 'application/JS
 ## Exploration of the data
 The API reference says that we can retrive data on all active buses by calling:
 ```
-http://api.translink.ca/rttiapi/v1/buses?apikey=[APIKey]
+http://api.translink.ca/rttiapi/v1/buses?apikey=[TRANS_LINK_API_KEY]
 ```
 
 Here's what the data looks like via browser:
@@ -165,7 +165,8 @@ npm install
 3. Setup environment variables in `.env`. Use the provided templete file `.env.template`. Edit it with a TransLink API key:
 ```
 {
-  "API_KEY": "xxxxxxxxxxxxxxxxxxx"
+  "REACT_APP_MAPBOX_ACCESS_TOKEN": "xxxxxxxxxxxxxxxxxxx",
+  "REACT_APP_TRANS_LINK_API_KEY": "xxxxxxxxxxxxxxxxxxx"
 }
 ```
 
@@ -173,6 +174,8 @@ npm install
 ```
 npm start
 ```
+
+Notes: Your browser should have WebGL enabled
 
 5. Run linter and unit test runner with:
 ```
