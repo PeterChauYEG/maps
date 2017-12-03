@@ -121,14 +121,14 @@ So we want our data to look like this:
 ```
 [
     {
-        "VehicleNo": "1008",
-        "Latitude": 49.189017,
-        "Longitude": -123.112633,
+        "vehicleNo": "1008",
+        "latitude": 49.189017,
+        "longitude": -123.112633,
     },
     {
-        "VehicleNo": "1009",
-        "Latitude": 49.195633,
-        "Longitude": -123.126967,
+        "vehicleNo": "1009",
+        "latitude": 49.195633,
+        "longitude": -123.126967,
     },
     ...
 ]

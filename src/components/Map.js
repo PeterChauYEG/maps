@@ -3,7 +3,10 @@ import MapGL from 'react-map-gl'
 import PropTypes from 'prop-types'
 
 // Component
-import Dot from './Dot'
+import DotContainer from './DotContainer'
+
+// fixtures
+import * as fixtures from '../fixtures'
 
 // env var
 const MAPBOX_ACCESS_TOKEN = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
@@ -17,21 +20,22 @@ class Map extends Component {
       map
     } = this.props
 
+    const buses = fixtures.populated
+
     return (
       <div className='Map'>
         <MapGL
           {...map}
           showZoomControls
-          width={750}
-          height={750}
+          width={window.innerWidth}
+          height={window.innerHeight}
           mapStyle='mapbox://styles/mapbox/dark-v9'
           mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
           onChangeViewport={onChangeViewport}
          >
-          <Dot
-            latitude={49.189017}
-            longitude={-123.112633}
-           />
+          <DotContainer
+            data={buses}
+          />
         </MapGL>
       </div>
     )

@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
   map: enhanceMapReducer(createViewportReducer(), {
     latitude: 49.2827,
     longitude: -123.1207,
-    zoom: 12,
+    zoom: 11,
     bearing: 9
   })
 })
