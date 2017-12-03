@@ -6,12 +6,27 @@ import * as busesActions from '../actions/buses-actions'
 import { onChangeViewport } from 'redux-map-gl'
 
 // components
+import MapContainer from './MapContainer'
 import Map from './Map'
 
 export class App extends Component {
   render () {
+    const {
+      buses,
+      map,
+      onChangeViewport,
+      setBuses
+    } = this.props
+
     return (
-      <Map {...this.props} />
+      <MapContainer
+        setBuses={setBuses}>
+        <Map
+          buses={buses}
+          map={map}
+          onChangeViewport={onChangeViewport}
+        />
+      </MapContainer>
     )
   }
 }

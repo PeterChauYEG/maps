@@ -188,3 +188,12 @@ npm run test:coverage
 ```
 
 A note on test coverage: Although 100% would be nice, I prefer to focus on functions and classes. Lets skip configuration and boilerplate code for this exercise.
+
+## Questions
+1. What   new   technologies   did   you   learn   to   complete   this   challenge?
+
+I learned `react-map-gl` for this challenge. It was challenging as I haven't worked with WebGL, and my browser wasn't configured correctly. That was quite a timesink... Make sure you enable WebGL! Otherwise, the library felt similar to other mapping clients. This one is much better looking, customizable, and powerful. I look forward to learning to better use it.
+
+2. Was   there   anything   you   found   specifically   challenging   or   time   consuming?
+
+I had forgotten some of the limitations of working on the web. One limitation was by configuration as I mentioned in the previous. The other is CORS. It took me a bit of time to relearn how we deal with that. I ended up proxying TransLink into the WebApp via `package.json`, since I didn't move beyond the development server provided by create-react-app.
