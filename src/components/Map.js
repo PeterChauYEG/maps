@@ -7,17 +7,19 @@ const MAPBOX_ACCESS_TOKEN = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
 class Map extends Component {
   render () {
     const {
-      map,
-      onChangeViewport
+      actions: {
+        onChangeViewport
+      },
+      map
     } = this.props
 
     return (
-      <div>
+      <div className='Map'>
         <MapGL
           {...map}
           showZoomControls
-          width={500}
-          height={500}
+          width={750}
+          height={750}
           mapStyle='mapbox://styles/mapbox/dark-v9'
           mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
           onChangeViewport={onChangeViewport}

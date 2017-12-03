@@ -6,12 +6,17 @@ import { combineReducers } from 'redux'
 
 // reducers
 import buses from './buses-reducer.js'
-import { createViewportReducer } from 'redux-map-gl'
+import enhanceMapReducer, { createViewportReducer } from 'redux-map-gl'
 
 // combine reducers into a single reducer
 const rootReducer = combineReducers({
   buses,
-  map: createViewportReducer()
+  map: enhanceMapReducer(createViewportReducer(), {
+    latitude: 49.2827,
+    longitude: -123.1207,
+    zoom: 12,
+    bearing: 9
+  })
 })
 
 export default rootReducer

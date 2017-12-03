@@ -29,8 +29,10 @@ function mapStateToProps (state, props) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    actions: bindActionCreators(busesActions, dispatch),
-    onChangeViewport
+    actions: bindActionCreators({
+      busesActions,
+      onChangeViewport
+    }, dispatch)
   }
 }
 
